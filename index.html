@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+	<html class="sl-root decks export offline loaded">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Direflow</title>
+
+
+		<link rel="stylesheet" type="text/css" href="lib/offline-v2.css">
+
+
+
+	</head>
+	<body class="reveal-viewport theme-font-montserrat theme-color-white-blue">
+		<div class="reveal">
+			<div class="slides">
+				<section class="stack" data-id="41b9a7526e6475ab99fd6cd83b93711f"><section data-id="445054db0ef013492b59b0bf87f328ff"><div class="sl-block" data-block-type="image" style="width: 806.4px; height: 423.36px; left: 76.8px; top: 138.32px; min-width: 1px; min-height: 1px;" data-name="image-a3c6e2" data-block-id="34acfb494dac0b4dc776a903fd8a4971"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="1200" data-natural-height="630" data-lazy-loaded="" data-src="direflow/1f89b96059dc2d2d5eaade1d929aaff0.png"></div></div></section><section data-id="7ad75734cbca2d7bbeccc8836ded8a2a"><div class="sl-block" data-block-type="iframe" style="width: 960px; height: 700px; left: 0px; top: 0px;" data-name="iframe-1f0df3" data-block-id="948a0469343921dcae4569267b445a6f"><div class="sl-block-style" style="z-index: 10; transform: rotate(0deg);"><div class="sl-block-content" style="z-index: 10;"><iframe webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" sandbox="allow-forms allow-scripts allow-popups allow-same-origin allow-pointer-lock allow-presentation" data-src="https://direflow.io/"></iframe></div></div></div></section></section><section class="stack" data-id="69d47eb17ddee7dd70ba790f6ac2dc24"><section data-id="cf671b97723ee50abf824c60138ea3a8"><div class="sl-block" data-block-type="image" style="width: 806.4px; height: 453.6px; left: 76.8px; top: 231.2px; min-width: 1px; min-height: 1px;" data-name="image-cb70ca" data-block-id="209171c6e62821110df03ed8b527d6a3"><div class="sl-block-content" style="z-index: 10;"><img style="" data-natural-width="1600" data-natural-height="900" data-lazy-loaded="" data-src="direflow/98025da09983a478963a4d3afd84bced.png"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 780px; left: 90px; top: 70px;" data-name="text-0c66d5" data-block-id="893a9e9d170f9af86cad0845e893a7c0"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<h1>Web Components</h1>
+</div></div></section><section data-id="18f791b5c88bcf52b9b6014317add287"><div class="sl-block" data-block-type="code" style="width: 960px; height: 379px; left: 0px; top: 49px;" data-name="code-8b4128" data-block-id="5502a50f22e0457591173e0c9d8f1ec9"><div class="sl-block-content notranslate" data-highlight-theme="a11y-dark" data-code-frame="none" style="z-index: 10;"><pre style="font-size: 16px; line-height: 19px;" class="xml"><code data-line-numbers="">&lt;template id="element-details-template"&gt;
+  &lt;style&gt;
+  details {font-family: "Open Sans Light",Helvetica,Arial}
+  ...
+  &lt;/style&gt;
+  &lt;details&gt;
+    &lt;summary&gt;
+      &lt;span&gt;
+        &lt;code class="name"&gt;&amp;lt;&lt;slot name="element-name"&gt;NEED NAME&lt;/slot&gt;&amp;gt;&lt;/code&gt;
+        ...
+      &lt;/span&gt;
+    &lt;/summary&gt;
+    &lt;div class="attributes"&gt;
+      &lt;h4&gt;&lt;span&gt;Attributes&lt;/span&gt;&lt;/h4&gt;
+      &lt;slot name="attributes"&gt;&lt;p&gt;None&lt;/p&gt;&lt;/slot&gt;
+    &lt;/div&gt;
+  &lt;/details&gt;
+  &lt;hr&gt;
+&lt;/template&gt;
+</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 897px; left: 0px; top: 0px;" data-name="text-3b195b" data-block-id="26c2aff754d39105b71ba552436fe6ac"><a class="sl-block-style" style="z-index: 11;" href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots#creating_a_template_with_some_slots" target="_blank"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<pre><span style="font-size:0.5em">https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slot</span></pre>
+</div></a></div>
+<div class="sl-block" data-block-type="code" style="width: 960px; height: 240px; left: 0px; top: 460px;" data-name="code-5d3be5" data-block-id="d735206b8df0b9c0982785ba2f4be760"><div class="sl-block-content notranslate" data-highlight-theme="a11y-dark" data-code-frame="none" style="z-index: 12;"><pre class="javascript" style="font-size: 16px; line-height: 19px;"><code data-line-numbers="">customElements.define('element-details',
+  class extends HTMLElement {
+    constructor() {
+      super();
+      const template = document
+        .getElementById('element-details-template')
+        .content;
+      const shadowRoot = this.attachShadow({mode: 'open'})
+        .appendChild(template.cloneNode(true));
+    }
+  }
+);
+</code></pre></div></div></section><section data-id="a7ee009b469df9d83487d49233cf5f76"><div class="sl-block" data-block-type="code" style="width: 960px; height: 145px; left: 0px; top: 51.5px;" data-name="code-5e9499" data-block-id="d36339b6b335f1677d2b45f4ad75ab06"><div class="sl-block-content notranslate" data-highlight-theme="a11y-dark" data-code-frame="none" style="z-index: 10;"><pre class="xml" style="font-size: 16px; line-height: 19px;"><code data-line-numbers="">&lt;element-details&gt;
+  &lt;span slot="element-name"&gt;template&lt;/span&gt;
+  &lt;span slot="description"&gt;A mechanism for holding client-
+    side content that is not to be rendered when a page is
+    loaded but may subsequently be instantiated during
+    runtime using JavaScript.&lt;/span&gt;
+&lt;/element-details&gt;</code></pre></div></div>
+<div class="sl-block" data-block-type="image" style="width: 806.4px; height: 370.784px; left: 76.8px; top: 329.216px; min-width: 1px; min-height: 1px;" data-name="image-4d5b9e" data-block-id="6c0e20124738e753df045253134c9ef7"><div class="sl-block-content" style="z-index: 11;"><img style="" data-natural-width="1107" data-natural-height="509" data-lazy-loaded="" data-src="direflow/78533e502705d92a4df7ea5335bc1a78.png"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 231px;" data-name="text-46050e" data-block-id="bc042aa86e209de82c77aef0b9c30aae"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<h1>shadow DOM</h1>
+</div></div></section><section data-id="96df4ebf1bbe32fb8ebd3c6314fb824a"><div class="sl-block" data-block-type="text" style="height: auto; width: 917px; left: 21.5px; top: 21px;" data-name="text-5e1758" data-block-id="17f8ba3b1472832c345762fb1af29618"><a class="sl-block-style" style="z-index: 10;" href="https://www.webcomponents.org/" target="_blank"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
+<h1>webcomponents.org</h1>
+</div></a></div>
+<div class="sl-block" data-block-type="iframe" style="width: 960px; height: 560px; left: 0px; top: 140px;" data-name="iframe-67a40c" data-block-id="8104e883f729517eaad2782518425374"><div class="sl-block-content" style="z-index: 11;"><iframe webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" sandbox="allow-forms allow-scripts allow-popups allow-same-origin allow-pointer-lock allow-presentation" data-src="https://www.webcomponents.org/element/@github/auto-complete-element"></iframe></div></div></section><section data-id="8ea48a4ca5ac544326e53d88e0efab06"><div class="sl-block" data-block-type="iframe" style="width: 605px; height: 314px; left: 177.5px; top: 210px;" data-name="iframe-d70c78" data-block-id="00950b91cab0cbb1aadd68d56debf072"><div class="sl-block-content" style="z-index: 10;"><iframe webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" sandbox="allow-forms allow-scripts allow-popups allow-same-origin allow-pointer-lock allow-presentation" data-src="https://github.github.com/auto-complete-element/examples/"></iframe></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 52px;" data-name="text-75cf67" data-block-id="d381c37146863da8cd1929b6cb8a5f63"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<pre>@github/auto-complete-element</pre>
+</div></div></section><section data-id="e7338ac10a6f7cdbb29ec024f393e4f8"><div class="sl-block" data-block-type="iframe" style="width: 960px; height: 700px; left: 0px; top: 0px;" data-name="iframe-e79689" data-block-id="c518be471cdbe4587528fc3b23995ab7"><div class="sl-block-content" style="z-index: 10;"><iframe webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" sandbox="allow-forms allow-scripts allow-popups allow-same-origin allow-pointer-lock allow-presentation" data-src="https://caniuse.com/custom-elementsv1"></iframe></div></div></section></section><section class="stack" data-id="3ae337591be3a8511627c8dd198ca007"><section data-id="263c63ba81c67202ec0ce51c1f375d30"><div class="sl-block" data-block-type="image" style="width: 806.4px; height: 423.36px; left: 76.8px; top: 138.32px; min-width: 1px; min-height: 1px;" data-name="image-a3c6e2" data-block-id="846177494f34a0397fd5b1c06b740695"><div class="sl-block-content" style="z-index: 10;"><img style="" data-natural-width="1200" data-natural-height="630" data-lazy-loaded="" data-src="direflow/1f89b96059dc2d2d5eaade1d929aaff0.png"></div></div></section><section data-id="29dc0da7f6cc66db3eeac762e5f29ed3"><div class="sl-block" data-block-type="code" style="width: 960px; height: 185px; left: 0px; top: 98px;" data-name="code-7d6ee7" data-block-id="9e103aa20c689fa92f900d5d8ada48e7"><div class="sl-block-content notranslate" data-highlight-theme="a11y-dark" data-code-frame="none" style="z-index: 10;"><pre style="font-size: 16px; line-height: 19px;" class="none"><code data-line-numbers=""># Create and run a React app.
+npx create-react-app webcomponents
+cd webcomponents
+npm start
+
+# Install polyfills...
+
+# Install components
+$ npm install --save @vaadin/vaadin-text-field ...</code></pre></div></div>
+<div class="sl-block" data-block-type="code" style="width: 960px; height: 342px; left: 0px; top: 358px;" data-name="code-9a55de" data-block-id="ca26a5a18c4aaeee50606f73570717b8"><div class="sl-block-content notranslate" data-highlight-theme="a11y-dark" data-code-frame="none" style="z-index: 11;"><pre class="javascript" style="font-size: 16px; line-height: 19px;"><code data-line-numbers="">import '@vaadin/vaadin-button';
+...
+
+render() {
+  return (
+    &lt;div className="App"&gt;
+        &lt;div className="form"&gt;
+          &lt;vaadin-text-field label="First Name" ref="firstName" /&gt;
+          &lt;vaadin-text-field label="Last Name" ref="lastName" /&gt;
+          &lt;vaadin-button ref="addButton"&gt; Add &lt;/vaadin-button&gt;
+        &lt;/div&gt;
+        &lt;vaadin-grid ref="grid"&gt;
+          &lt;vaadin-grid-column path="firstName" header="First name" /&gt; 
+
+
+          &lt;vaadin-grid-column path="lastName" header="Last name" /&gt;
+        &lt;/vaadin-grid&gt;
+      &lt;/div&gt;
+  );
+}
+
+componentDidMount() {
+  let people = []; 
+
+
+  this.refs.addButton.addEventListener('click', e =&gt; { 
+
+
+    people = [ 
+
+
+      ...people,
+      {
+        firstName: this.refs.firstName.value,
+        lastName: this.refs.lastName.value
+      }
+    ];
+    this.refs.grid.items = people; 
+
+
+    this.refs.firstName.value = ''; 
+
+
+    this.refs.lastName.value = '';
+  });
+}</code></pre></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 0px; top: 311px;" data-name="text-fc8f60" data-block-id="c5e231b426d7c764ab81dfd09e92f3bf"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<p style="text-align: left;">App.js</p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 0px;" data-name="text-db27c2" data-block-id="0dba204d2c596eda2833ee729d669a3b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;">
+<h1>Usage</h1>
+</div></div></section><section data-id="3c3e33089f835677bc513c5e8ced2ffd"><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 21px;" data-name="text-5d0f50" data-block-id="038292ddaa14bf3f31de32d142b4688c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
+<h1>Development</h1>
+</div></div>
+<div class="sl-block" data-block-type="iframe" style="width: 960px; height: 560px; left: 0px; top: 140px;" data-name="iframe-1f0df3" data-block-id="b27e8800e0d869fe711e734bd5f9ad0e"><div class="sl-block-style" style="z-index: 11; transform: rotate(0deg);"><div class="sl-block-content" style="z-index: 11;"><iframe webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" sandbox="allow-forms allow-scripts allow-popups allow-same-origin allow-pointer-lock allow-presentation" data-src="https://direflow.io/"></iframe></div></div></div></section><section data-id="e1fa5bf8a4c092e5043174d2bf1abfdd"><div class="sl-block" data-block-type="iframe" style="width: 841px; height: 649px; left: 59.5px; top: 51px;" data-name="iframe-87346a" data-block-id="ee019701e4085a6a312c91a7f886d03a"><div class="sl-block-content" style="z-index: 10;"><iframe webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" sandbox="allow-forms allow-scripts allow-popups allow-same-origin allow-pointer-lock allow-presentation" data-src="https://direflow.io/get-started#the-setup"></iframe></div></div>
+<div class="sl-block" data-block-type="code" style="width: 960px; height: 31px; left: 0px; top: 0px;" data-name="code-26c97f" data-block-id="6edc5daaae4e1161d9786732d1270785"><div class="sl-block-content notranslate" data-highlight-theme="a11y-dark" data-code-frame="none" style="z-index: 11;"><pre class="none" style="font-size: 16px; line-height: 19px;"><code data-line-numbers="">direflow create</code></pre></div></div></section></section><section data-id="8caff6eaa4aa5372e2a8d5eda7618792"><div class="sl-block" data-block-type="image" style="width: 690.2px; height: 518px; left: 134.9px; top: 91px; min-width: 1px; min-height: 1px;" data-name="image-848b10" data-block-id="c2d9f6e5fb4b62bad3c27c4e2075c029"><div class="sl-block-content" style="z-index: 10;"><img style="" data-natural-width="493" data-natural-height="370" data-lazy-loaded="" data-src="direflow/9b30704d95c5f63beeedfeb3c55b031d.gif"></div></div></section>
+			</div>
+		</div>
+
+		<script>
+			var SLConfig = {"deck": {"id":2013729,"slug":"direflow","title":"Direflow","description":"","width":960,"height":700,"margin":0.05,"visibility":"all","published_at":"2021-01-08T13:31:24.841Z","sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/ca6a82fcd23d73a1c405780e7ea86291/thumb.jpg?1610526940","view_count":9,"user":{"id":1142422,"username":"dargmuesli","name":"Jonas Thelemann","description":"","thumbnail_url":"https://www.gravatar.com/avatar/632fa3870b8c01d361cf16615526654b?s=140\u0026d=https%3A%2F%2Fstatic.slid.es%2Fimages%2Fdefault-profile-picture.png","account_type":"lite","team_id":null,"settings":{"id":3934566,"present_controls":true,"present_upsizing":false,"present_pointer":true,"present_notes":true,"default_deck_tag_id":null}},"background_transition":"slide","transition":"slide","theme_id":null,"theme_font":"montserrat","theme_color":"white-blue","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":true,"rolling_links":false,"center":false,"shuffle":null,"should_loop":false,"share_notes":null,"slide_number":null,"slide_count":16,"rtl":false,"version":2,"collaborative":null,"deck_user_editor_limit":1,"data_updated_at":1610114293674,"font_typekit":null,"font_google":null,"time_limit":null,"navigation_mode":"default","upsizing_enabled":null,"notes":{}}};
+
+
+			// Use local fonts
+			SLConfig.fonts_url = 'lib/fonts/';
+		</script>
+
+		<script src="lib/reveal.js"></script>
+		<script src="lib/reveal-plugins.js"></script>
+		<script src="lib/offline.js"></script>
+
+		<!-- Initialize the presentation -->
+		<script>
+			Reveal.initialize({
+				width: 960,
+				height: 700,
+				margin: 0.05,
+				
+
+				hash: true,
+				controls: true,
+				progress: true,
+				mouseWheel: false,
+				showNotes: false,
+				slideNumber: false,
+				fragmentInURL: true,
+
+				autoSlide: 0,
+				autoSlideStoppable: true,
+
+				autoAnimateMatcher: SL.deck.AutoAnimate.matcher,
+
+				center: false,
+				shuffle: false,
+				loop: false,
+				rtl: false,
+				navigationMode: "default",
+
+				transition: "slide",
+				backgroundTransition: "slide",
+
+				highlight: {
+					escapeHTML: false
+				},
+
+				plugins: [ RevealZoom, RevealNotes, RevealMarkdown, RevealHighlight ]
+			});
+		</script>
+
+		
+
+	</body>
+</html>
